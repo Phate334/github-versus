@@ -1,0 +1,30 @@
+[tool.poetry]
+name = "github-versus"
+version = "0.1.0"
+description = ""
+authors = ["Phate334 <phate334@gmail.com>"]
+packages = [{include = "ghvs"}]
+
+[tool.poetry.dependencies]
+python = "^3.9"
+typer = "^0.4.0"
+rich = "^11.1.0"
+pydantic = "^1.9.0"
+requests-html = "^0.10.0"
+humanize = "^3.14.0"
+
+[tool.poetry.dev-dependencies]
+pytest = "^5.2"
+black = {version = "^22.1.0", allow-prereleases = true}
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.isort]
+profile = "black"
+src_paths = ["ghvs", "tests"]
+combine_as_imports = true
+
+[tool.poetry.scripts]
+gvs = "ghvs.main:app"
